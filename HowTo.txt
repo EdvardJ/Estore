@@ -1,0 +1,13 @@
+activate venv
+Root
+environment_3_8_2/Scripts/activate
+
+
+Run backend
+cd /estore_django
+py manage.py runserver
+
+(on second terminal)
+Run frontend
+cd /estore_vue
+npm run serve
