@@ -30,6 +30,7 @@
               </div>
             </form>
           </div>
+          <router-link to="/about" class="navbar-item">About us</router-link>
         </div>
         <div class="navbar-end">
           <router-link to="/hats" class="navbar-item">Hats</router-link>
