@@ -2,7 +2,7 @@
     <div class="column is-3">
         <div class="box">
           <figure class="image mb-4">
-            <img v-bind:src="product.get_thumbnail">
+            <img v-bind:src="product.get_thumbnail" class="center">
           </figure>
 
           <h3 class="is-size-4">{{ product.name }}</h3>
@@ -23,6 +23,13 @@ export default {
 </script>
 
 <style scoped>
+  
+  .center {
+    object-fit: cover;
+    width: 95%;
+    height: 17rem;
+
+  }
   .image {
     margin-top: -1.25rem;
     margin-left: -1.25rem;

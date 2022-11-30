@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-      <section class="hero is-medium mb-6">
+      <section class="hero is-medium mb-6 is-dark">
         <div class="hero-body has-text-centered">
         <p class="title mb-6">
           Welcome to Estore
@@ -39,7 +39,6 @@ export default {
   },
   components: {
     ProductBox,
-    ProductBox
 },
   mounted() {
     this.getLatestProducts()
