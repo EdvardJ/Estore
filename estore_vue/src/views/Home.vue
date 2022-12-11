@@ -1,7 +1,7 @@
 <template>
   <div class="home">
       <section class="hero is-medium mb-6 is-dark">
-        <div class="hero-body has-text-centered">
+        <div class="hero-body has-text-centered" :style="cssProps">
         <p class="title mb-6">
           Welcome to Estore
         </p>
@@ -34,7 +34,10 @@ export default {
   name: 'Home',
   data() {
     return {
-      latestProducts: []
+      latestProducts: [],
+      cssProps: {
+          backgroundImage: `url(${require('@/assets/Background.jpg')})`
+        }
     }
   },
   components: {

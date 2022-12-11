@@ -1,16 +1,17 @@
 <template>
    <div class="page-search">
         <div class="columns is-multiline">
-            <div class="columns is-12">
-                <h1 class="title">Search</h1>
-                <br>
-                <h2 class="is-size-5 has-text-grey">Search term: "{{ query }}"</h2>
-            </div>
+            <div class="column is-20">
 
+                <h1 class="is-size-5">Search term: "{{ query }}"</h1>
+           
+          
             <ProductBox
                 v-for="product in products"
                 v-bind:key="product.id"
                 v-bind:product="product" />
+            </div>
+
         </div>
    </div>
 </template>
