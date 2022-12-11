@@ -1,6 +1,6 @@
 activate venv
 Root
-environment_3_8_2/Scripts/activate
+environment_3.11.0\Scripts\activate
 
 
 Run backend
