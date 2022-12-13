@@ -36,7 +36,7 @@
           <router-link to="/hats" class="navbar-item">Hats</router-link>
           <router-link to="/jackets" class="navbar-item">Jackets</router-link>
           <router-link to="/pants" class="navbar-item">Pants</router-link>
-
+          <router-link to="/shirts" class="navbar-item">Shirts</router-link>
           <div class="navbar-item">
             <div class="buttons">
               <router-link to="/log-in" class="button is-light">Log in</router-link>
@@ -50,7 +50,7 @@
         </div>
       </div>
     </nav>
-
+<!--loading bar-->
     <div class="is-loading-bar has-text-centered" v-bind:class="{'is-loading': $store.state.isLoading}">
       <div class="lds-dual-ring"></div>
     </div>
