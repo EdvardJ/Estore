@@ -60,7 +60,9 @@ export default {
     },
     methods: {
         submitForm() {
+            //reset errors
             this.errors = []
+            //check for errors
             if (this.username === '') {
                 this.errors.push('The username is missing')
             }
