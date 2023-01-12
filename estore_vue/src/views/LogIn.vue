@@ -69,6 +69,7 @@ export default {
                 .then(response => {
                     //create a variable from response data
                     const token = response.data.auth_token
+                
                     //call store to set token with information from the server
                     this.$store.commit('setToken', token)
                     //set the header for token
