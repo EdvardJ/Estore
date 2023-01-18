@@ -197,6 +197,7 @@ export default {
         },
         async stripeTokenHandler(token) {
             const items = []
+
             for (let i = 0; i < this.cart.items.length; i++) {
                 const item = this.cart.items[i]
                 const obj = {
@@ -204,6 +205,7 @@ export default {
                     quantity: item.quantity,
                     price: item.product.price * item.quantity
                 }
+
                 items.push(obj)
             }
             const data = {
@@ -218,7 +220,6 @@ export default {
                 'stripe_token': token.id
             }
             
-           
 
             await axios
                 .post('/api/v1/checkout/', data)
@@ -228,7 +229,6 @@ export default {
                 })
                .catch(error => {
                     this.errors.push('Something went wrong. Please try again')
-                    console.log(token)
                     console.log(error)
                 })
                 this.$store.commit('setIsLoading', false)
