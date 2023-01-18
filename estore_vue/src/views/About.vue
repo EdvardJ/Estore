@@ -16,5 +16,7 @@
     <p>If you wish to contact me:</p>
     <br>
     <p>email: me@email.com</p>
+    <hr>
+    <a href="https://www.flaticon.com/free-icons/shop" title="shop icons">Shop icons created by Vectors Market - Flaticon</a>
   </div>
 </template>

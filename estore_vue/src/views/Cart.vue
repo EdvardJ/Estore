@@ -37,6 +37,9 @@
                 <hr>
 
                 <router-link to="/cart/checkout" class="button is-dark">Proceed to checkout</router-link>
+                <hr>
+                <h2 class="subtitle">or</h2>
+                <button class="button is-danger" @click="clearCart">Clear cart</button>
             </div>
         </div>
     </div>
@@ -65,7 +68,14 @@ export default {
         //remove item from cart by filtering with id
         removeFromCart(item) {
             this.cart.items=this.cart.items.filter(i => i.product.id !== item.product.id)
-        }
+        },
+        //empty cart and reload page
+        clearCart(state) {
+        state.cart = { items: [] }
+
+        localStorage.setItem('cart', JSON.stringify(state.cart))
+        location.reload();
+      }
     },
     computed: {
         // product quantity

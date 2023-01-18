@@ -14,7 +14,7 @@
 
                 <p>Description:<br> {{ product.description }}</p>
 
-                <p><strong>Price: </strong>${{ product.price }}</p>
+                <p><strong>Price: </strong>€{{ product.price }}</p>
 
                 <div class="field has-addons mt-6">
                     <div class="control">

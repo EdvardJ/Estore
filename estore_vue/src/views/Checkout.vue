@@ -141,14 +141,23 @@ export default {
         document.title = 'Checkout | Estore'
 
         this.cart = this.$store.state.cart
+        //check if products in cart
+        if (this.cartTotalLength > 0) {
+            //create new instance of Stripe
+            this.stripe = Stripe('pk_test_51MKQkGEYaBWOwaBwYpl7eGD8b2G1Xfo8d1msfzfuxlDGEpgD2WfGBqiB4oo8u1851HUKPNVUYOdxsjpamYJ2POKO003Ypiwd6Z')
+            const elements = this.stripe.elements();
+            this.card = elements.create('card', {hidePostalCode: true})
+            //mount card to card-element div
+            this.card.mount('#card-element')
+        }
     },
     methods: {
         getItemTotal(item) {
             return item.quantity * item.product.price
         },
-        //check for errrors
+        //check for errors
         submitForm() {
-
+ 
             this.errors = []
 
             if (this.first_name === '') {
@@ -172,6 +181,7 @@ export default {
             if (this.place === '') {
                 this.errors.push('The place field is missing!')
             }
+           
             if (!this.errors.length) {
                 this.$store.commit('setIsLoading', true)
                 this.stripe.createToken(this.card).then(result => {                    
@@ -187,6 +197,7 @@ export default {
         },
         async stripeTokenHandler(token) {
             const items = []
+
             for (let i = 0; i < this.cart.items.length; i++) {
                 const item = this.cart.items[i]
                 const obj = {
@@ -194,6 +205,7 @@ export default {
                     quantity: item.quantity,
                     price: item.product.price * item.quantity
                 }
+
                 items.push(obj)
             }
             const data = {
@@ -207,13 +219,15 @@ export default {
                 'items': items,
                 'stripe_token': token.id
             }
+            
+
             await axios
                 .post('/api/v1/checkout/', data)
                 .then(response => {
                     this.$store.commit('clearCart')
                     this.$router.push('/cart/success')
                 })
-                .catch(error => {
+               .catch(error => {
                     this.errors.push('Something went wrong. Please try again')
                     console.log(error)
                 })
