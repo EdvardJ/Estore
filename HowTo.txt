@@ -5,7 +5,7 @@ environment_3_8_2/Scripts/activate
 
 Run backend
 cd /estore_django
-pip install requirements.txt
+pip install -r requirements.txt
 py manage.py runserver
 
 (on second terminal)
