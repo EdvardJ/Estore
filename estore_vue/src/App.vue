@@ -67,7 +67,7 @@
 </section>
 
     <footer class="footer">
-      <p class="has-text-centered is-dark">Copyright (c) 2022</p>
+      <p class="has-text-centered is-dark">Copyright (c) 2023</p>
     </footer>
 
   </div>
@@ -152,5 +152,10 @@ import axios from 'axios'
   &.is-loading {
     height: 80px;
   }
+}
+
+.navbar-item { 
+  color: #48C78E;
+  text-shadow: 0.5px 0.5px black;
 }
 </style>

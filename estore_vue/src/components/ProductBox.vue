@@ -23,10 +23,13 @@ export default {
 </script>
 
 <style scoped>
-  
+  .box:hover { 
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+  }
   .center {
     object-fit: cover;
-    width: 95%;
+    width: 100%;
     height: 17rem;
 
   }

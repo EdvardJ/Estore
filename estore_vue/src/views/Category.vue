@@ -71,3 +71,11 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+h2 {
+font: italic small-caps bold 12px/30px Georgia, serif; 
+  color: #48C78E;
+  text-shadow: 2px 2px black;
+}
+</style>
