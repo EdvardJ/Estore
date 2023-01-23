@@ -1,6 +1,6 @@
 <template>
   <div id="wrapper">
-    <nav class="navbar is-lights">
+    <nav class="navbar">
       <div class="navbar-brand">
         <router-link to="/" class="navbar-item"><strong>eStore</strong></router-link>
 
@@ -33,11 +33,25 @@
           <router-link to="/about" class="navbar-item">About us</router-link>
         </div>
         <div class="navbar-end">
-          <router-link to="/hats" class="navbar-item">Hats</router-link>
-          <router-link to="/jackets" class="navbar-item">Jackets</router-link>
-          <router-link to="/pants" class="navbar-item">Pants</router-link>
-          <router-link to="/shirts" class="navbar-item">Shirts</router-link>
           <div class="navbar-item">
+            <div class="dropdown is-hoverable">
+              <div class="dropdown-trigger">
+                <div class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu">
+                  <span id="cat-tag">Categories:</span>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+            </div>
+              <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                  <router-link to="/hats" class="navbar-item">Hats</router-link>
+                  <router-link to="/jackets" class="navbar-item">Jackets</router-link>
+                  <router-link to="/pants" class="navbar-item">Pants</router-link>
+                  <router-link to="/shirts" class="navbar-item">Shirts</router-link>
+                </div>
+              </div>
+          </div>
             <div class="buttons">
               <!-- check if authenticated and show either login or myaccount buttons-->
               <template v-if="$store.state.isAuthenticated">
@@ -68,6 +82,7 @@
 
     <footer class="footer">
       <p class="has-text-centered is-dark">Copyright (c) 2023</p>
+      <router-link id="privacy" to="/privacy">Privacy Policy</router-link>
     </footer>
 
   </div>
@@ -85,6 +100,7 @@ import axios from 'axios'
           items: []
         }
       }
+      
     },
     beforeCreate() {
       this.$store.commit('initializeStore')
@@ -116,6 +132,10 @@ import axios from 'axios'
 
 <style lang="scss">
 @import '../node_modules/bulma';
+
+#cat-tag {
+  color: black;
+}
 
 .lds-dual-ring {
   display: inline-block;
@@ -153,9 +173,19 @@ import axios from 'axios'
     height: 80px;
   }
 }
-
+.navbar {
+  background-color: #FFE0B5;
+}
 .navbar-item { 
   color: #48C78E;
   text-shadow: 0.5px 0.5px black;
+}
+.footer {
+  text-align: center;
+  color: #b5e2fa;
+  background-color: #586f6b;
+}
+#privacy {
+  text-decoration: none;
 }
 </style>

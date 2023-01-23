@@ -13,6 +13,7 @@ import LogIn from '../views/LogIn.vue'
 import MyAccount from '../views/MyAccount.vue'
 import Checkout from '../views/Checkout.vue'
 import Success from '../views/Success.vue'
+import Privacy from '../views/Privacy.vue'
 
 
 const routes = [
@@ -79,6 +80,11 @@ const routes = [
     path: '/:category_slug',
     name: 'Category',
     component: Category
+  },
+  {
+    path: '/privacy',
+    name: 'Privacy',
+    component: Privacy
   }
 ]
 

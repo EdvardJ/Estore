@@ -1,11 +1,11 @@
 <template>
   <div class="home">
       <section class="hero is-medium mb-6 is-dark">
-        <div class="hero-body has-text-centered" :style="cssProps">
+        <div class="has-text-centered" id="banner">
         <h1 class="is-size-1">
           Welcome to eStore
         </h1>
-        <h2 class="is-size-2">
+        <h2 class="is-size-4">
           The best online store ever!
         </h2>
       </div>
@@ -13,7 +13,7 @@
   </div>
     <div class="columns is-multiline">
       <div class="column is-12">
-        <h2 class="is-size-2 has-text-centered">Latest products</h2>
+        <h3 class="is-size-2 has-text-centered">Latest products</h3>
       </div>
 
       <ProductBox
@@ -34,11 +34,7 @@ export default {
   name: 'Home',
   data() {
     return {
-      latestProducts: [],
-      cssProps: {
-          backgroundImage: `url(${require('@/assets/Background.jpg')})`,
-          backgroundRepeat: `no-repeat`
-        }
+      latestProducts: []
     }
   },
   components: {
@@ -70,13 +66,28 @@ export default {
 </script>
 
 <style scoped>
+#banner {
+  height: 10rem;
+  background-image: url('~@/assets/Background.jpg');
+  background-repeat: no-repeat;
+}
 h1 {
-  font: italic bold 12px/30px Georgia, serif;
+  font: italic bold 1.2em Georgia, serif;
   color: #48C78E;
   text-shadow: 2px 2px 2px  black;
+  padding-top: 0.5em;
 }
 h2 {
   color: #48C78E;
   text-shadow: 2px 2px black;
+}
+h3 {
+  color: #48C78E;
+  text-shadow: 2px 2px black;
+}
+@media (max-width: 512px) {
+  h2 {
+    display: none;
+  }
 }
 </style>
