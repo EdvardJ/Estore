@@ -1,5 +1,7 @@
 <template>
   <div class="about" style="display: block; margin-left: auto; margin-right: auto;">
+    <p>In production this would be where the contact information would be found...</p>
+  <br>
     <h1><strong>Welcome to eStore!</strong></h1>
     <p>
       It's a webstore in development by me, Edvard Jacobson.<br>
@@ -10,7 +12,7 @@
     <ul>
       <li>Vue.js</li>
       <li>Django</li>
-      <li>Django Restframework</li>
+      <li>Django Restframework</li>+
     </ul>
     <br>
     <p>If you wish to contact me:</p>
