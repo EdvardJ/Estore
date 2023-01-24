@@ -1,5 +1,5 @@
 <template>
-    <div id="wrapper">
+    <div id="privacy">
         <h1>Privacy policies</h1>
         <br>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab debitis eius ea, eos aliquid necessitatibus asperiores ipsum sit reprehenderit! Deleniti tenetur perferendis voluptate doloremque nostrum consectetur non inventore in sed.</p>
@@ -14,7 +14,7 @@
 
 </template>
 <style>
-#wrapper {
+#privacy {
     text-align: center;
 }
 </style>
