@@ -25,6 +25,8 @@ SECRET_KEY = 'django-insecure-$z+to1rcb1m6g1%&7^zizx8-q7uqt7m!u#vaz2g@$3n@#qefu!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+CSRF_TRUSTED_ORIGINS = ['https://myestore.info']
+
 ALLOWED_HOSTS = ["myestore.info", "estoreshop.info"]
 
 STRIPE_SECRET_KEY = 'sk_test_51MKQkGEYaBWOwaBwr0V9fPDmBRwDFCkOWuP7p0hKCTuS2VgFyq9Me5uJKlu8eirM6YHk6p4zwpayoPUoz9Ks0Slf003h5mwc8V'
