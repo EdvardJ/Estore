@@ -1,7 +1,6 @@
-"activate venv
-Root
-environment_3_8_2/Scripts/activate
-"
+requirements:
+Python 3.11.1
+node v18.13.0 
 
 Run backend
 cd /estore_django
